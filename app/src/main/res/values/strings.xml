@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">engexam</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Eng Exam</string>
+    <string name="title_test">Тесты</string>
+    <string name="title_materials">Материалы</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_favorite">Избранное</string>
 </resources>
