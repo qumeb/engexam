@@ -44,22 +44,22 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        TextView text = findViewById(R.id.textView);
-        Button button = findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HttpHandler handler = new HttpHandler();
-                handler.execute("https://fakestoreapi.com", "/products/1");
-
-                try {
-                    text.setText(handler.get().getString("title"));
-                } catch (ExecutionException | InterruptedException | JSONException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
+//        TextView text = findViewById(R.id.textView);
+//        Button button = findViewById(R.id.button);
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                HttpHandler handler = new HttpHandler();
+//                handler.execute("https://fakestoreapi.com", "/products/1");
+//
+//                try {
+//                    text.setText(handler.get().getString("title"));
+//                } catch (ExecutionException | InterruptedException | JSONException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//        });
     }
 
 
