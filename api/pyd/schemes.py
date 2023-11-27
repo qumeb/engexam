@@ -6,3 +6,22 @@ from typing import List
 
 class LessonSchema(LessonBase):
     test: List[TestBase]
+    subject: List[SubjectBase]
+    level: List[LevelBase]
+
+class TestSchema(TestBase):
+    questions: List[QuestionBase]
+    level: List[LevelBase]
+    subject: List[SubjectBase]
+class LevelSchema(LevelBase):
+    name: str
+
+class SubjectSchema(SubjectBase):
+    name: str
+
+
+class AnswerSchema(AnswerBase):
+    text: str
+
+class QuestionSchema(QuestionBase):
+    answers: List[AnswerBase]

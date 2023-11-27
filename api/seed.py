@@ -3,14 +3,12 @@ from sqlalchemy.orm import Session
 from database import engine
 import models
 
-with Session(bind=engine) as session:
-    cat1 = models.Category(name='Еда', description='Вкусная, для людей')
-    cat2 = models.Category(name='Вода', description='Без вкуса, для людей')
-    cat3 = models.Category(name='Одежда', description='Без стиля, для людей')
+models.Base.metadata.drop_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 
-    prod1 = models.Product(name='Дошик', description='Не вкусный, для студентов', price=66.5,categories=[cat1])
-    prod2 = models.Product(name='Святой источник', description='Обычная вода, для людей', price=33.4,categories=[cat2])
-    prod3 = models.Product(name='Кепка ОДМО', description='Специально для ОДМОшников', price=350.0,categories=[cat3])
-    session.add_all([cat1, cat2, cat3, prod1, prod2, prod3])
+with Session(bind=engine) as session:
+    lesson = models.Lesson(title='Urok1', text='text2')
+
+    session.add_all([lesson])
     session.commit()
 
