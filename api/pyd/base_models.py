@@ -33,6 +33,19 @@ class TestBase(BaseModel):
     class Config:
         orm_mode = True
 
+class QuestionBase(BaseModel):
+    question_text: str = Field(..., example='Текст вопроса')
+
+    class Config:
+        orm_mode = True
+
+
+class Answer(BaseModel):
+    answer_text: str = Field(..., example='Текст ответа')
+
+    class Config:
+        orm_mode = True
+
 class LessonBase(BaseModel):
     id: int = Field(..., gt=0, example=1)
     title: str = Field(None, example='Название/Заголовок/Title')

@@ -13,5 +13,3 @@ app = FastAPI()
 
 app.include_router(api_router)
 
-
-# тестовый комент 228
