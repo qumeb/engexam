@@ -2,7 +2,9 @@ package com.example.engexam;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +21,7 @@ import com.example.engexam.HttpHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import okhttp3.OkHttpClient;
@@ -26,11 +29,13 @@ import okhttp3.OkHttpClient;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        listView = findViewById(R.id.materials_list);
+
+        fillMaterialsList(listView);
 //        TextView text = findViewById(R.id.textView);
 //        Button button = findViewById(R.id.button);
 //
@@ -60,6 +68,24 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
+    }
+
+    private void fillMaterialsList(ListView listView) { //сделать юниверсал функцией (материалы тесты любимое)
+        //1. запрос к апи (вынести все запросы в отделдьный java-класс)
+        //2. по идее парсинг из json в объекты java (-//-)
+        //пока пример на обычном массиве
+
+        ArrayList<String> listItems = new ArrayList<>();
+        for(int i = 0; i < 100; i++){
+            listItems.add(String.valueOf(i));
+        }
+
+        System.out.println("================================================");
+
+
+
+      ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item, listItems);
+      listView.setAdapter(arrayAdapter);
     }
 
 
