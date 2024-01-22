@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="negative">#C10015</color>
+    <color name="positive">#21BA45</color>
+    <color name="alert">#F2C037</color>
+
+    <color name="triad1">#009999</color>
+    <color name="triad2">#fafafa</color>
+    <color name="triad3">#006363</color>
+
 </resources>

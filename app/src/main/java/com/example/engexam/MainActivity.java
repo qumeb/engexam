@@ -76,15 +76,15 @@ public class MainActivity extends AppCompatActivity {
         //пока пример на обычном массиве
 
         ArrayList<String> listItems = new ArrayList<>();
-        for(int i = 0; i < 100; i++){
-            listItems.add(String.valueOf(i));
+        for(int i = 0; i < 20; i++){
+            listItems.add("Урок под номером " + String.valueOf(i+1));
         }
 
         System.out.println("================================================");
 
 
 
-      ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item, listItems);
+      ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.row_material, R.id.lesson, listItems);
       listView.setAdapter(arrayAdapter);
     }
 

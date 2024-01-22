@@ -12,13 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white"
+        android:background="@color/triad2"
     >
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="@color/teal_200"
             android:orientation="vertical"
             android:elevation="20dp"
+            android:background="@drawable/layout_bg__slider"
+            android:layout_marginTop="35dp"
+            android:layout_marginHorizontal="15dp"
+            android:paddingVertical="5dp"
         >
             <TextView
                 android:layout_width="wrap_content"
@@ -26,6 +29,7 @@
                 android:text="Пройденные материалы"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/triad2"
             />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,10 +41,10 @@
                     android:id="@+id/slider"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-
                     android:layout_weight="80"
                     app:labelBehavior="gone"
                     android:enabled="false"
+                    app:thumbColor="@color/triad3"
                     android:value="0.65"
                 />
                <Space
@@ -50,6 +54,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
+                    android:textColor="@color/triad2"
                     android:text="65/100"
                 />
             </LinearLayout>
@@ -59,7 +64,10 @@
             android:id="@+id/materials_list"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="35dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp"
+            android:paddingBottom="180dp">
         </ListView>
     </GridLayout>
 
