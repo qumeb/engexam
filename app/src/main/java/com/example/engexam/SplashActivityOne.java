@@ -23,7 +23,7 @@ public class SplashActivityOne extends Activity {
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
-        }, 2000);
+        }, 500);
 
     }
 
